@@ -350,8 +350,8 @@ if __name__ == "__main__":
             # print('out_dir:', args.out_dir)
             # print('cfg_name : ', cfg.name)
             if not args.novis:
-                _, file_name = os.path.split(data['name'])
-                print(file_name)
+                # _, file_name = os.path.split(data['name'])
+                # print(file_name)
                 file_path = os.path.normpath(os.path.join(args.out_dir, cfg.name, "png"))
                 os.makedirs(file_path, exist_ok=True)
 
@@ -361,7 +361,7 @@ if __name__ == "__main__":
                 # )
 
         if not args.novis:
-            _, file_name = os.path.split(data['name'])
+            # _, file_name = os.path.split(data['name'])
             img_crop_path = osp.join(args.out_dir, cfg.name, "png", f"{file_name}_crop.png")
             torchvision.utils.save_image(
                 torch.cat([
@@ -390,7 +390,7 @@ if __name__ == "__main__":
                 process=False,
                 maintains_order=True,
             )
-            _, file_name = os.path.split(data['name'])
+            # _, file_name = os.path.split(data['name'])
             smpl_obj_path = f"{args.out_dir}/{cfg.name}/obj/{file_name}_smpl_{idx:02d}.obj"
 
             if not osp.exists(smpl_obj_path):
