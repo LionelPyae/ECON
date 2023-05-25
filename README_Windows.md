@@ -56,9 +56,29 @@ cd ../libvoxelize
 python setup.py build_ext --inplace
 ```
 
-Run Command 
+## Register at [ICON's website](https://icon.is.tue.mpg.de/)
 
+![Register](../assets/register.png)
+Required:
+
+- [SMPL](http://smpl.is.tue.mpg.de/): SMPL Model (Male, Female)
+- [SMPL-X](http://smpl-x.is.tue.mpg.de/): SMPL-X Model, used for training
+- [SMPLIFY](http://smplify.is.tue.mpg.de/): SMPL Model (Neutral)
+- [PIXIE](https://icon.is.tue.mpg.de/user.php): PIXIE SMPL-X estimator
+
+:warning: Click **Register now** on all dependencies, then you can download them all with **ONE** account.
+
+## Downloading required models and extra data (make sure to install git and wget for windows for this to work)
+
+```bash
+cd ECON
+bash fetch_data.sh # requires username and password
+```
+
+Run Command 
 
 ```bash
 # For single-person image-based reconstruction (w/ l visualization steps, 1.8min)
 python -m apps.inferencing -cfg ./configs/econ.yaml -in_dir ./examples -out_dir ./results
+```
+
